@@ -20,6 +20,7 @@ body {
     border: 0px;
     border-radius: 5px;
 }
+
 #play_btn_ai {
     position: absolute;
     top: 15vh;

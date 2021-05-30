@@ -291,6 +291,7 @@ class MCTS {
     }
 }
 
+
 let player = 1;
 let human_position = -1;
 let cells = []; 
