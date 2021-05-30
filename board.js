@@ -296,7 +296,7 @@ let human_position = -1;
 let cells = []; 
 let game;
 let mcts;
-let first_human = true;
+let toggle_color = false;
 let interval;
 let msg_box;
 
@@ -354,13 +354,15 @@ function game_exe() {
         game.print_board();
         if(player == 1){
             player = 2;
-            cells[position].classList.add("black");
+            if(!toggle_color) cells[position].classList.add("black");
+            else cells[position].classList.add("white");
             msg_box.innerHTML = "";
             msg_box.innerHTML = "AI's turn 🤖";
         }
         else{
             player = 1;
-            cells[position].classList.add("white");
+            if(!toggle_color) cells[position].classList.add("white");
+            else cells[position].classList.add("black");
             human_position = -1;
             msg_box.innerHTML = "";
             msg_box.innerHTML = "Your turn";
@@ -374,9 +376,6 @@ function game_exe() {
                 msg_box.innerHTML = "";
                 msg_box.innerHTML = "AI Wins 👁";
             }
-            let btn = document.getElementById("play_btn");
-            btn.innerHTML = "";
-            btn.innerHTML = "Play Again";
             clearInterval(interval);
             return;
         }
@@ -386,14 +385,24 @@ function game_exe() {
     }
 }
 
-function play(){
+function play(turn){
+    player = turn;
     msg_box = document.getElementById("msg-box");
-    player = 1;
+    if(player == 1){
+        toggle_color = false;
+        msg_box.innerHTML = "";
+        msg_box.innerHTML = "Your turn";
+    }
+    else{
+        toggle_color = true;
+        msg_box.innerHTML = "";
+        msg_box.innerHTML = "AI's turn 🤖";
+    }
     human_position = -1;
-    first_human = true;
     clearInterval(interval);
     game = new Game();
     mcts = new MCTS(50000, 2, 2);
     initialize_board();
     interval = setInterval(game_exe, 50);
 }
+

@@ -8,13 +8,29 @@ body {
     background-color: #676767;
 }
 
-#play_btn {
+#play_btn_human {
     position: absolute;
     top: 15vh;
-    left: 50vw;
+    left: 45vw;
     width: 80px;
     height: 50px;
     transform: translate(-50%, -50%);
+    color: white;
+    background-color: black;
+    border: 0px;
+    border-radius: 5px;
+}
+#play_btn_ai {
+    position: absolute;
+    top: 15vh;
+    left: 55vw;
+    width: 80px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
 }
 
 #board {
