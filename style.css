@@ -1,0 +1,74 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: #676767;
+}
+
+#play_btn {
+    position: absolute;
+    top: 15vh;
+    left: 50vw;
+    width: 80px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+}
+
+#board {
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid black; */
+    background-image: url("./board.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 91% 91%;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    height: 9%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cell {
+    position: relative;
+    width: 5%;
+    height: 3vh;
+    margin: 5px;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+#msg-box {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    /* border: 1px solid black; */
+    font-size: 1.8em;
+    color: #8CEA00;
+    font-family: 'Press Start 2P', cursive;
+}
